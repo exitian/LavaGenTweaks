@@ -20,7 +20,13 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    mavenLocal()
+
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 base {
@@ -31,7 +37,7 @@ base {
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 mixin {
-    config 'fasterminecart.mixins.json'
+    config 'exitiantweaks.mixins.json'
 }
 
 //minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -102,13 +108,10 @@ dependencies {
     // And its provides the option to then use net.minecraft as the group, and one of; client, server or joined as the module name, plus the game version as version.
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
-
-    // Example optional mod dependency with JEI
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
-    // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
-    // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+    implementation "curse.maven:glitchcore-955399:5483773"
+    implementation "curse.maven:tough-as-nails-246391:5437843"
+    implementation "curse.maven:unexperienced-552526:5480499"
+    implementation "curse.maven:configured-457570:5441232"
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

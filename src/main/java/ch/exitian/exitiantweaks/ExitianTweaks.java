@@ -1,4 +1,4 @@
-package ch.exitian.fasterminecart;
+package ch.exitian.exitiantweaks;
 
 import net.neoforged.fml.config.ModConfig;
 import org.slf4j.Logger;
@@ -17,13 +17,13 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-@Mod(FasterMinecart.MODID)
-public class FasterMinecart
+@Mod(ExitianTweaks.MODID)
+public class ExitianTweaks
 {
-    public static final String MODID = "fasterminecart";
+    public static final String MODID = "exitiantweaks";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public FasterMinecart(IEventBus modEventBus, ModContainer modContainer)
+    public ExitianTweaks(IEventBus modEventBus, ModContainer modContainer)
     {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);

@@ -1,6 +1,6 @@
-package ch.exitian.fasterminecart.mixin;
+package ch.exitian.exitiantweaks.mixin;
 
-import ch.exitian.fasterminecart.Config;
+import ch.exitian.exitiantweaks.Config;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
