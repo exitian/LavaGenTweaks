@@ -1,11 +1,13 @@
 package ch.exitian.exitiantweaks;
 
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(ExitianTweaks.MODID)
 public class ExitianTweaks
@@ -34,7 +36,7 @@ public class ExitianTweaks
 //    @SubscribeEvent
 //    public void onServerStarting(ServerStartingEvent event)
 //    {
-//
+//        Exitian
 //    }
 //
 //        // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

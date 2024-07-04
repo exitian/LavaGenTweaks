@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractMinecart.class)
-public abstract class MinecartMixin {
+public abstract class AbstractMinecartMixin {
 
     @Inject (method = "getMaxSpeedWithRail", at = @At("HEAD"), cancellable = true)
     public void getMaxSpeedWithRail(CallbackInfoReturnable<Double> callback) {

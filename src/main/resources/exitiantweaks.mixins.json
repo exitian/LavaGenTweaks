@@ -8,7 +8,9 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "MinecartMixin",
-    "HotbarMixin"
+    "AbstractMinecartMixin",
+    "HotbarMixin",
+    "NoiseGeneratorSettingsMixin",
+    "NarratorMixin"
   ]
 }
