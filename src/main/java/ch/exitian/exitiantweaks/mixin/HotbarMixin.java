@@ -8,8 +8,8 @@ import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
-import static ch.exitian.exitiantweaks.Config.rightBarHeightOffset;
 import static ch.exitian.exitiantweaks.Config.leftBarHeightOffset;
+import static ch.exitian.exitiantweaks.Config.rightBarHeightOffset;
 
 @OnlyIn(Dist.CLIENT)
 @Mixin(Gui.class)

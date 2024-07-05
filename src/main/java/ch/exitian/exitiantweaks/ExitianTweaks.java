@@ -4,30 +4,27 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(ExitianTweaks.MODID)
-public class ExitianTweaks
-{
+public class ExitianTweaks {
     public static final String MODID = "exitiantweaks";
 
     public static final TagKey<Item> deathPreventables = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "death_preventables"));
     public static final TagKey<Item> willBurnPlayers = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "will_burn_players"));
 
-    public ExitianTweaks(IEventBus modEventBus, ModContainer modContainer)
-    {
+    public ExitianTweaks(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         NeoForge.EVENT_BUS.register(EventHandler.class);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 

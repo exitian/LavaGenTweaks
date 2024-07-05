@@ -4,15 +4,12 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.AccessibilityOnboardingScreen;
 import net.minecraft.client.gui.screens.TitleScreen;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.FormattedText;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -23,7 +20,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 import net.neoforged.neoforge.common.EffectCures;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
@@ -33,12 +29,13 @@ import static ch.exitian.exitiantweaks.ExitianTweaks.*;
 @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.GAME)
 public class EventHandler {
 
+    public static int lastTick = 0;
+
     @SubscribeEvent
     public static void PortalSpawnEvent(BlockEvent.PortalSpawnEvent event) {
         event.setCanceled(!Config.allowNetherPortalForming);
     }
 
-    public static int lastTick = 0;
     @SubscribeEvent
     public static void damagePlayerByHotItem(PlayerTickEvent.Post event) {
 
@@ -102,7 +99,6 @@ public class EventHandler {
                 event.getEntity().level().broadcastEntityEvent(entity, (byte) 35);
             }
         }
-
     }
 }
 

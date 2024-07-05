@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(NoiseGeneratorSettings.class)
 public class NoiseGeneratorSettingsMixin {
 
-    @Inject (method = "oreVeinsEnabled", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "oreVeinsEnabled", at = @At("HEAD"), cancellable = true)
     public void oreVeinsEnabled1(CallbackInfoReturnable<Boolean> callback) {
         callback.setReturnValue(Config.generateLargeOreNodes);
     }
