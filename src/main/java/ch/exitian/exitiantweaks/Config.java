@@ -47,12 +47,27 @@ public class Config
             .comment("default: true")
             .define("disableAccessibilityOnboardingScreen", true);
 
+    private static final ModConfigSpec.BooleanValue ENABLE_INVENTORY_TOTEM = BUILDER
+            .comment("Should any item with the tag #c:death_preventables stop the player from dying in the inventory.")
+            .comment("\"True\" enables totem-ability in the inventory.")
+            .comment("default: false")
+            .define("enableInventoryTotem", false);
+
+    private static final ModConfigSpec.BooleanValue HOT_ITEMS_DAMAGE_PLAYER = BUILDER
+            .comment("If any item with the tag c:will_burn_players will.. burn players.")
+            .comment("This is the same damage as being hurt by lava. Fire protection does mitigate.")
+            .comment("\"True\" enables this.")
+            .comment("default: false")
+            .define("hotItemsDamagePlayers", false);
+
     public static Boolean allowNetherPortalForming;
     public static Double minecartSpeed;
     public static Integer leftBarHeightOffset;
     public static Integer rightBarHeightOffset;
     public static Boolean generateLargeOreNodes;
     public static Boolean disableAccessibilityOnboardingScreen;
+    public static Boolean enableInventoryTotem;
+    public static Boolean hotItemsDamagePlayers;
 
     static final ModConfigSpec SPEC = BUILDER.build();
     private static boolean validateModName(final Object obj)
@@ -70,5 +85,7 @@ public class Config
         rightBarHeightOffset = RIGHT_BAR_HEIGHT.get();
         generateLargeOreNodes = GENERATE_LARGE_ORE_NODES.get();
         disableAccessibilityOnboardingScreen = DISABLE_NARRATOR.get();
+        enableInventoryTotem = ENABLE_INVENTORY_TOTEM.get();
+        hotItemsDamagePlayers = HOT_ITEMS_DAMAGE_PLAYER.get();
     }
 }
