@@ -7,10 +7,10 @@ import squeek.appleskin.api.event.HUDOverlayEvent;
 
 @SuppressWarnings("unused")
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = "appleskin")
-public final class AppleSkinEventHandler {
+public class AppleSkinEventHandler {
 
     @SubscribeEvent
-    public static void offsetAppleskin(HUDOverlayEvent event) {
+    public void offsetAppleskin(HUDOverlayEvent event) {
         event.y = event.guiGraphics.guiHeight() - Config.offsetAppleskin;
     }
 }
