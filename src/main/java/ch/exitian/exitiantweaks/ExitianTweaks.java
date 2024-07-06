@@ -1,11 +1,13 @@
 package ch.exitian.exitiantweaks;
 
+import ch.exitian.exitiantweaks.config.Config;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -17,11 +19,16 @@ public class ExitianTweaks {
 
     public static final TagKey<Item> deathPreventables = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "death_preventables"));
     public static final TagKey<Item> willBurnPlayers = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "will_burn_players"));
+    public static final TagKey<Item> heatResistantItems = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "heat_resistant_items"));
 
     public ExitianTweaks(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         NeoForge.EVENT_BUS.register(EventHandler.class);
+
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        if (ModList.get().isLoaded("appleskin")) {
+            NeoForge.EVENT_BUS.register(new AppleSkinEventHandler());
+        }
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

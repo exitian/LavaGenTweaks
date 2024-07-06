@@ -1,7 +1,9 @@
 package ch.exitian.exitiantweaks.mixin;
 
-import ch.exitian.exitiantweaks.Config;
+import ch.exitian.exitiantweaks.config.Config;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

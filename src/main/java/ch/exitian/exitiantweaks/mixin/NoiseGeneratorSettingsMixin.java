@@ -1,6 +1,6 @@
 package ch.exitian.exitiantweaks.mixin;
 
-import ch.exitian.exitiantweaks.Config;
+import ch.exitian.exitiantweaks.config.Config;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

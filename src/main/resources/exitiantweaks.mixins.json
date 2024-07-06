@@ -10,7 +10,7 @@
   "mixins": [
     "AbstractMinecartMixin",
     "HotbarMixin",
-    "NoiseGeneratorSettingsMixin",
-    "NarratorMixin"
+    "NarratorMixin",
+    "NoiseGeneratorSettingsMixin"
   ]
 }
