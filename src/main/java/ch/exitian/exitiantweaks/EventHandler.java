@@ -27,7 +27,6 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import squeek.appleskin.api.event.HUDOverlayEvent;
 
 import static ch.exitian.exitiantweaks.ExitianTweaks.*;
 
